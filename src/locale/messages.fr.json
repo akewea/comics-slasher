@@ -1,0 +1,7 @@
+{
+  "locale": "fr",
+  "translations": {
+    "board.name": "Planche {$INTERPOLATION}",
+    "tab.boards.title": "Planches"
+  }
+}

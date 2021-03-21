@@ -1,0 +1,45 @@
+<p>story-viewer works!</p>
+
+<mat-tab-group>
+    <mat-tab i18n-label="@@tab.boards.title" label="Boards">
+
+        <div class="row">
+            <div class="boards-column">
+
+                <mat-card *ngFor="let board of story.boards; let index = index;">
+                    <mat-card-title i18n="@@board.name">Board {{ index + 1 }}</mat-card-title>
+                    <mat-card-content>
+                        <app-boxes-layout [board]="board"></app-boxes-layout>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+            <div class="boxes-column">
+
+                <div *ngFor="let board of story.boards; let index = index;">
+
+                    <mat-card *ngFor="let box of board.boxes; let index = index;">
+                        <mat-card-header>
+                            <mat-card-title i18n="@@box.name">Box {{ index + 1 }}</mat-card-title>
+                            
+                            <mat-slide-toggle [checked]="box.layout?.newLine || false" [disabled]="index === 0" (change)="updateNewLine(box, $event)">New line</mat-slide-toggle>
+                            <mat-slider min="1" max="10" step="1" [value]="box.layout?.height" (input)="updateHeight(box, $event)" [disabled]="!(box.layout?.newLine || index === 0)" vertical="true">Height</mat-slider>
+                            <mat-slider min="1" max="10" step="1" [value]="box.layout?.width" (input)="updateWidth(box, $event)" [disabled]="getBoxLine(board, box)?.length === 1">Width</mat-slider>
+                            
+                        </mat-card-header>
+                        <mat-card-content>
+                            <mat-form-field class="example-full-width" style="width: 100%;">
+                                <textarea matInput placeholder="Ex. It makes me feel..." cdkTextareaAutosize="true" [(ngModel)]="box.action"></textarea>
+                            </mat-form-field>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+
+            </div>
+        </div>
+
+    </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>

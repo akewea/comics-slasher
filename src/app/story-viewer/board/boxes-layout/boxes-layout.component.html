@@ -1,0 +1,7 @@
+<div class="board-layout" *ngIf="board && board.boxes">
+    <div *ngFor="let box of board.boxes; let index = index;"
+        class="box"
+        [style]="getBoxStyles(index)">
+        {{ index +1 }}                              
+    </div>
+</div>

@@ -1,0 +1,51 @@
+@import '~@angular/material/theming';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define your application's custom theme.
+$primary: mat-palette($mat-pink);
+$accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+$theme: mat-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  )
+));
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($theme);
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    flex-basis: 100%;
+    padding: 0 0.5em;
+}
+
+.boards-column {
+    @extend .col;
+
+    .board-layout {
+        background-color: mat-color($accent, lighter);
+        width: 200px;
+        height: 280px;
+
+        .box {
+            background-color: mat-color($accent, darker);
+            border: 2px solid mat-color($accent, lighter);
+        }
+    }
+}
+.boxes-column {
+    @extend .col;
+
+    mat-card {
+        margin-bottom: .5em;
+    }
+}
