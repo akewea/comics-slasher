@@ -1,5 +1,3 @@
-<p>story-viewer works!</p>
-
 <mat-tab-group>
     <mat-tab i18n-label="@@tab.boards.title" label="Boards">
 
@@ -12,6 +10,12 @@
                         <app-boxes-layout [board]="board"></app-boxes-layout>
                     </mat-card-content>
                 </mat-card>
+
+            </div>
+
+            <div class="ideas-column">
+
+                <app-ideas [ideas]="story.ideas || []"></app-ideas>
 
             </div>
 

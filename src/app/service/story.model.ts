@@ -9,6 +9,7 @@ export interface Story {
 export interface Node {
     uuid: string;
     ideas?: Node[];
+    text?: string;
 }
 
 export interface Board {

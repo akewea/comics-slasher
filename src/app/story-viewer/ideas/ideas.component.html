@@ -1,0 +1,8 @@
+<app-idea *ngFor="let idea of ideas;" 
+    [idea]="idea"
+    [parent]="parent"
+    (addSiblingIdea)="addSiblingIdea($event)"
+    (removeFromParent)="removeIdea($event)"
+    ></app-idea>
+
+<h2>{{currentNode?.uuid}}</h2>

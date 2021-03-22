@@ -9,7 +9,17 @@ export class StoryService {
     getSampleStory(): Story {
         return {
             title: 'My Lost story',
-            ideas: [],
+            ideas: [{
+                uuid: 'idea-1',
+                text: 'sdqqsdqsdqsdqsd',
+                ideas: [{
+                    uuid: 'idea-1.1',
+                    text: 'sub idea !'
+                }]
+            },{
+                uuid: 'idea-2',
+                text: 'qsd qsd gdf\ndf sdf s'
+            }],
             boards: [
                 {
                     uuid: 'board-1',

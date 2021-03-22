@@ -42,10 +42,36 @@ $theme: mat-dark-theme((
         }
     }
 }
+.ideas-column {
+    @extend .col;
+
+    mat-card {
+        margin-bottom: .5em;
+    }
+}
 .boxes-column {
     @extend .col;
 
     mat-card {
         margin-bottom: .5em;
+    }
+}
+
+app-ideas {
+    .mat-card {
+        padding: 0.5em 16px;
+    }
+    .mat-form-field-infix {
+        border-top: none;
+    }
+    .mat-form-field-label-wrapper {
+        padding-top: none;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+        padding-bottom: 0.25em;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        bottom: 0.25em;
+        background-color: transparent;
     }
 }

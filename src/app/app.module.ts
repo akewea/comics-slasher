@@ -22,13 +22,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StoryViewerComponent } from './story-viewer/story-viewer.component';
 import { BoxesLayoutComponent } from './story-viewer/board/boxes-layout/boxes-layout.component';
+import { IdeasComponent } from './story-viewer/ideas/ideas.component';
+import { IdeaComponent } from './story-viewer/ideas/idea/idea.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     StoryViewerComponent,
-    BoxesLayoutComponent
+    BoxesLayoutComponent,
+    IdeasComponent,
+    IdeaComponent
   ],
   imports: [
     BrowserModule,
