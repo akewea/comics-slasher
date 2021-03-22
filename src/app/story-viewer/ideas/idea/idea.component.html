@@ -1,18 +1,27 @@
-<mat-card>
-    <mat-card-content>
-        <mat-form-field class="" style="width: 100%;">
-            <textarea matInput #textarea
-                cdkTextareaAutosize="true" 
-                [(ngModel)]="idea.text" 
-                (keydown)="onKeydown($event)"
-                (focusout)="onFocusOut()"
-                ></textarea>
-        </mat-form-field>
+<div cdkDrag>
+    <mat-card>
+        <mat-card-content>
+            <div style="display:flex; flex-direction: row;">
+                <mat-form-field class="" style="width: 100%;">
+                    <textarea matInput #textarea
+                        cdkTextareaAutosize="true" 
+                        [(ngModel)]="idea.text" 
+                        (keydown)="onKeydown($event)"
+                        (focusout)="onFocusOut()"
+                        ></textarea>
+                </mat-form-field>
 
-        <app-ideas *ngIf="idea.ideas"
-            [ideas]="idea.ideas" 
-            [parent]="idea"
-            ></app-ideas>
+                <mat-icon cdkDragHandle>drag_indicator</mat-icon>
+            </div>
 
-    </mat-card-content>
-</mat-card>
+            <app-ideas
+                [ideas]="idea.ideas" 
+                [parent]="idea"
+                [connectedDropListsIds]="connectedDropListsIds"
+                ></app-ideas>
+
+        </mat-card-content>
+    </mat-card>
+
+    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+</div>

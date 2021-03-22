@@ -14,7 +14,15 @@ export class StoryService {
                 text: 'sdqqsdqsdqsdqsd',
                 ideas: [{
                     uuid: 'idea-1.1',
-                    text: 'sub idea !'
+                    text: '1 sub idea !'
+                },
+                {
+                    uuid: 'idea-1.2',
+                    text: '2 sub idea !'
+                },
+                {
+                    uuid: 'idea-1.3',
+                    text: '3 sub idea !'
                 }]
             },{
                 uuid: 'idea-2',

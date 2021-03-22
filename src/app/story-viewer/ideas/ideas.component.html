@@ -1,8 +1,13 @@
-<app-idea *ngFor="let idea of ideas;" 
-    [idea]="idea"
-    [parent]="parent"
-    (addSiblingIdea)="addSiblingIdea($event)"
-    (removeFromParent)="removeIdea($event)"
-    ></app-idea>
-
-<h2>{{currentNode?.uuid}}</h2>
+<div cdkDropList
+(cdkDropListDropped)="dropIdea($event)"
+[id]="uuid"
+[cdkDropListData]="ideas"
+[cdkDropListConnectedTo]="connectedDropListsIds">
+    <app-idea *ngFor="let idea of ideas;" 
+        [idea]="idea"
+        [parent]="parent"
+        (addSiblingIdea)="addSiblingIdea($event)"
+        (removeFromParent)="removeIdea($event)"
+        [connectedDropListsIds]="connectedDropListsIds"
+        ></app-idea>
+</div>

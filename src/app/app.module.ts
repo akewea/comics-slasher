@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -42,6 +43,7 @@ import { IdeaComponent } from './story-viewer/ideas/idea/idea.component';
     MatIconModule,
     MatToolbarModule,
     LayoutModule,
+    DragDropModule,
     MatButtonModule,
     MatCardModule,
     MatGridListModule,

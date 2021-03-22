@@ -11,6 +11,7 @@ export class IdeaComponent implements OnInit {
 
   @Input() idea!: Node;
   @Input() parent?: Node;
+  @Input() connectedDropListsIds!: string[];
 
   @Output() addSiblingIdea: EventEmitter<Node> = new EventEmitter();
   @Output() removeFromParent: EventEmitter<Node> = new EventEmitter();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { MatSliderChange } from '@angular/material/slider';
-import { Board, Box, Story } from '../service/story.model';
+import { Board, Box, Node, Story } from '../service/story.model';
 import { StoryService } from '../service/story.service';
 
 @Component({
@@ -72,4 +72,17 @@ export class StoryViewerComponent implements OnInit {
     return lines;
   }
 
+  public get connectedDropListsIds(): string[] {
+    // We reverse ids here to respect items nesting hierarchy
+    return ['liste-root'].concat(this.getIdsRecursive(this.story.ideas)).reverse();
+  }
+
+  private getIdsRecursive(nodes: Node[] | undefined): string[] {
+    let ids: string[] = [];
+    nodes?.forEach((node) => { 
+      ids.push('liste-' + node.uuid);
+      ids = ids.concat(this.getIdsRecursive(node.ideas));
+    });
+    return ids;
+  }
 }
